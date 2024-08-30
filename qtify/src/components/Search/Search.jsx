@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./Search.module.css"; import { ReactComponent as SearchIcon } from '../../assets/search-icon.svg';
-import { useAutocomplete } from '@mui/base/useAutocomplete';
+import styles from "./Search.module.css";
+import { ReactComponent as SearchIcon } from '../../assets/search-icon.svg';
+import useAutocomplete from '@mui/material/useAutocomplete'; // Corrected import
 import { styled } from "@mui/system";
 import { truncate } from "../../helpers/helpers";
 import { useNavigate } from "react-router-dom";
-import { Tooltip } from "@mui/material";
 
 const Listbox = styled("ul")(({ theme }) => ({
     width: "100%",
@@ -51,20 +51,19 @@ function Search({ searchData, placeholder }) {
     });
 
     const navigate = useNavigate();
-    const onSubmit = (e, value) => {
+
+    const onSubmit = (e) => {
         e.preventDefault();
-        console.log(value);
-        navigate(`/album/${value.slug}`);
-        //Process form data, call API, set state etc.
+        if (value && value.slug) {
+            navigate(`/album/${value.slug}`);
+        }
     };
 
     return (
         <div style={{ position: "relative" }}>
             <form
                 className={styles.wrapper}
-                onSubmit={(e) => {
-                    onSubmit(e, value);
-                }}
+                onSubmit={onSubmit}
             >
                 <div {...getRootProps()}>
                     <input
@@ -84,7 +83,6 @@ function Search({ searchData, placeholder }) {
             {groupedOptions.length > 0 ? (
                 <Listbox {...getListboxProps()}>
                     {groupedOptions.map((option, index) => {
-                        // console.log(option);
                         const artists = option.songs.reduce((accumulator, currentValue) => {
                             accumulator.push(...currentValue.artists);
                             return accumulator;
