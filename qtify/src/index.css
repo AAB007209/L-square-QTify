@@ -6,8 +6,6 @@ It is commonly used to define global CSS variables (custom properties) that can 
     --color-black: #121212;
 }
 
-/* Pseudo-elements in CSS are used to style parts of an element or create additional content. They are denoted by the :: syntax
-  Adding *::before and *::after extends the selection to include their respective pseudo-elements. */
 *,
 *::before,
 *::after {

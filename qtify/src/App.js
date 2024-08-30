@@ -4,7 +4,7 @@ import Section from './components/Section/Section';
 import FilterSection from './components/FilterSection/FilterSection';
 import { fetchTopAlbums, fetchNewAlbums, fetchSongs } from './api/api'
 import { useEffect, useState } from 'react';
-import styles from "./App.css"
+import styles from "./App.module.css"
 
 function App() {
 
@@ -120,5 +120,3 @@ function App() {
 }
 
 export default App;
-
-// rcfe: react component function export

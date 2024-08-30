@@ -29,7 +29,7 @@ function Card({ data, type }) {
         }
 
         case "song": {
-            const { image, likes, title, songs } = data;
+            const { image, likes, title } = data;
             return (
                 // no tooltip required here according to figma provided
                 <div className={styles.wrapper}>
@@ -56,7 +56,7 @@ function Card({ data, type }) {
 export default Card;
 
 /*
-sample data recieved: a data is representing one album ->
+Below is the Sample Data that is being recieved: a data is representing one album ->
 
 {
 id: "111a44fc-db51-4c0e-9dc8-486ae6fab50b",

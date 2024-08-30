@@ -63,15 +63,3 @@ const Section = ({ type, title, data, toggle = true }) => {
 }
 
 export default Section;
-
-/**
- Notes:
-A.)Why are we passing the function "renderCardComponent" as a prop to carousel, can'nt we use the card component directly in carousel component?
-    1. Separation of Loigc: By passing the rendering logic (renderCardComponent) from the carousel to the section, you separate concerns. 
-          The carousel component should primarily handle the presentation of the carousel itself, while the section component should handle how the data is rendered within the carousel.
-
-    2. Scalability: If you have multiple sections with different types of carousels or data structures, using a rendering function 
-        allows you to handle each case appropriately without cluttering the carousel component with conditional rendering logic
-
-    3. Reducing the import cost, by not importing the card component in the carousel.
- */

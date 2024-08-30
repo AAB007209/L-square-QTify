@@ -53,15 +53,3 @@ const Carousel = ({ data, renderCardComponent }) => {
 }
 
 export default Carousel;
-
-/*
-1. rafce shortcut
-
-2. swiper.slideTo(index, speed, runCallbacks):	
-    Run transition to the slide with index number equal to 'index' parameter for the duration equal to 'speed' parameter.
-
-3.  In React, a swiper component is typically used to create interactive and touch-enabled carousels or slideshows. 
-    It allows users to swipe through a series of content panels horizontally or vertically on touch-enabled devices or through mouse drag on desktop browsers.
-
-
-*/
